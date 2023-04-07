@@ -1654,7 +1654,7 @@ GameObject:
   - component: {fileID: 447293825}
   - component: {fileID: 447293826}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EnemyMaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,7 +1686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80541678017a9f4488b7876f7e4823ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 3356706788174982262, guid: 764fe292e8c0535488a0b6526f02c0b7,
+    type: 3}
   curTime: 0
   coolTime: 0
   maxEnemy: 10
@@ -7428,6 +7429,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575780dd1f55b7941803be0767c1e36e, type: 3}
+--- !u!1 &2098124488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2098124489}
+  - component: {fileID: 2098124490}
+  m_Layer: 0
+  m_Name: MuzzlPlash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2098124489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098124488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2931, y: -0.0064, z: 2.031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2142393635}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2098124490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098124488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d755355a2e99b44eaba73e40e0c9441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzl: {fileID: 100000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
 --- !u!1001 &2118329400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7612,6 +7657,7 @@ Transform:
   m_Children:
   - {fileID: 640888514}
   - {fileID: 187106805}
+  - {fileID: 2098124489}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

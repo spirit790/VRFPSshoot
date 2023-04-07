@@ -30,7 +30,21 @@ public class EnemyMaker : MonoBehaviour
         curTime += Time.deltaTime;
 
     }
-    
+    public GameObject GetEnmey()
+    {
+        foreach (GameObject enemy in enemyPool)
+        {
+            if (!enemy.activeInHierarchy)
+            {
+                enemy.SetActive(true);
+                return enemy;
+            }
+        }
+
+        GameObject newEnemy = Instantiate(enemyPrefab);
+        enemyPool.Add(newEnemy);
+        return newEnemy;
+    }
 
 
 }

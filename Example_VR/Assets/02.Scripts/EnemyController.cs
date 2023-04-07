@@ -38,9 +38,12 @@ public class EnemyController : MonoBehaviour
     public float lockTime;
     public float lockCoolTime = 1f;
 
+    public GameObject muzzl;
+
 
     void Start()
     {
+        muzzl = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         enemyState = ENEMYSTATE.IDEL;
@@ -103,7 +106,6 @@ public class EnemyController : MonoBehaviour
             case ENEMYSTATE.DEAD:
                     Debug.Log("죽어");
                     anim.SetTrigger("DEAD");
-                    enemyState = ENEMYSTATE.NONE;
                     Destroy(gameObject, 2f);
 
                     break;
@@ -120,6 +122,7 @@ public class EnemyController : MonoBehaviour
                 Instantiate(hitEffect, transform.position, transform.rotation);
                 enemyState = ENEMYSTATE.DAMAGE;
                 DamageByPlayer();
+                muzzl.GetComponentInChildren<MuzzlPlash>().OnMuzzl();
             }
         }
     }
